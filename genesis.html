@@ -1,0 +1,56 @@
+<div class="mhc-blueprint-root">
+  <div class="blueprint-grid-lines"></div>
+
+  <main class="mhc-blueprint-container">
+    <header class="blueprint-header">
+      <h1 class="blueprint-title">STRATEGIC ALLIANCE</h1>
+      <p class="blueprint-subtitle">// GLOBAL INFRASTRUCTURE ALLIANCE & ANNUAL STRATEGY</p>
+    </header>
+
+    <section class="blueprint-asset-grid">
+      <div class="asset-card">
+        <h3 class="blueprint-label">// CLASS A: SPACES</h3>
+        <h2 class="asset-title">## NODAL INFRA</h2>
+        <p class="asset-desc">Onboard physical studios or warehouses into our verified network as operational nodes.</p>
+      </div>
+
+      <div class="asset-card active-asset">
+        <h3 class="blueprint-label">// PREMIUM: ANNUAL</h3>
+        <h2 class="asset-title">## ALL-IN-ONE ALLIANCE</h2>
+        <p class="asset-desc">High-tier strategic integration across the 2026 calendar. Title brand placement and ecosystem equity.</p>
+      </div>
+    </section>
+
+    <section class="ledger-wrapper">
+      <div class="ledger-paper">
+        <h3 class="ledger-title-text">Partnership Inquiry Ledger</h3>
+        <form class="ledger-form">
+          <input type="text" placeholder="ENTITY_NAME" class="ledger-input">
+          <input type="email" placeholder="COMM_LINK (Email)" class="ledger-input">
+          <textarea placeholder="PROPOSAL_SUMMARY" class="ledger-input" rows="3"></textarea>
+          <button type="button" class="ledger-submit" onclick="alert('SIGNAL_TRANSMITTED: Command Hub notified.')">INITIALIZE_CONNECTION</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+
+<style>
+.mhc-blueprint-root { background-color: #1A0033; color: #F5F5F5; padding: 40px 20px; position: relative; border-radius: 8px; }
+.blueprint-grid-lines { 
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    background-image: linear-gradient(rgba(140, 82, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(140, 82, 255, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events: none;
+}
+.blueprint-title { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 0; }
+.blueprint-subtitle { font-family: 'Roboto Mono', monospace; color: #C9A8FF; text-align: center; font-size: 10px; letter-spacing: 2px; }
+.blueprint-asset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; position: relative; z-index: 5; }
+.asset-card { border: 1px solid rgba(201,168,255,0.15); background: rgba(255,255,255,0.02); padding: 25px; border-radius: 8px; }
+.active-asset { border-color: #8C52FF; box-shadow: 0 0 20px rgba(140, 82, 255, 0.1); }
+.asset-title { font-size: 18px; margin: 10px 0; color: #fff; }
+.asset-desc { font-size: 12px; opacity: 0.7; line-height: 1.4; }
+.ledger-paper { background: #F5F5F5; color: #1A0033; padding: 30px; border-radius: 8px; margin-top: 40px; position: relative; z-index: 5; }
+.ledger-title-text { font-weight: 900; margin-bottom: 20px; border-bottom: 2px solid #1A0033; padding-bottom: 10px; }
+.ledger-input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Roboto Mono', monospace; box-sizing: border-box; }
+.ledger-submit { background: #1A0033; color: #fff; width: 100%; padding: 15px; border: none; font-weight: 900; cursor: pointer; border-radius: 4px; }
+</style>
