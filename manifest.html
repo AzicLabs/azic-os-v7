@@ -1,0 +1,67 @@
+<div class="manifest-root">
+  <div class="starfield-overlay"></div>
+  
+  <div class="waypoint-engine">
+    <div class="waypoint active" style="top: 20%; left: 15%;" data-title="Barnum Ave RFP" data-info="Phase 2 advancement for the 100k sq ft Innovation Campus."></div>
+    <div class="waypoint" style="top: 45%; left: 40%;" data-title="$25M Valuation" data-info="Architecture locked and valuation anchored for institutional facility."></div>
+    <div class="waypoint" style="top: 70%; left: 80%;" data-title="Global Node Launch" data-info="Phased deployment of the Sovereign OS to verified operational hubs."></div>
+    
+    <svg class="map-path" width="100%" height="100%" style="position:absolute; top:0; left:0; z-index:1;">
+      <path d="M 120 140 L 320 315 L 640 490" stroke="rgba(140, 82, 255, 0.3)" fill="none" stroke-width="2" />
+    </svg>
+  </div>
+
+  <div class="manifest-meta">
+    <h2 id="wp-title">## EXPEDITION_MANIFEST</h2>
+    <p id="wp-info">Select a waypoint to decrypt mission data.</p>
+  </div>
+</div>
+
+<script>
+  // Mobile-Friendly Interaction
+  document.querySelectorAll('.waypoint').forEach(wp => {
+    wp.addEventListener('click', () => {
+      // Toggle active states
+      document.querySelectorAll('.waypoint').forEach(w => w.classList.remove('active'));
+      wp.classList.add('active');
+      
+      // Update info box
+      document.getElementById('wp-title').innerText = `## ${wp.getAttribute('data-title')}`;
+      document.getElementById('wp-info').innerText = wp.getAttribute('data-info');
+    });
+  });
+</script>
+
+<style>
+.manifest-root { 
+    height: 600px; background: #0c001a; position: relative; 
+    border: 1px solid rgba(140, 82, 255, 0.3); overflow: hidden; 
+    border-radius: 8px;
+}
+.starfield-overlay { 
+    position: absolute; width: 100%; height: 100%; 
+    background: radial-gradient(white 1px, transparent 1px); 
+    background-size: 50px 50px; opacity: 0.1; z-index: 0;
+}
+.waypoint-engine { position: relative; width: 100%; height: 100%; z-index: 5; }
+.waypoint { 
+    position: absolute; width: 15px; height: 15px; 
+    background: #fff; border-radius: 50%; cursor: pointer; z-index: 10;
+}
+.waypoint.active { 
+    background: #8C52FF; box-shadow: 0 0 20px #8C52FF; 
+    animation: pulse 2s infinite; 
+}
+.manifest-meta { 
+    position: absolute; bottom: 20px; left: 20px; right: 20px;
+    background: rgba(0,0,0,0.8); padding: 20px; border-left: 4px solid #8C52FF;
+    font-family: 'Roboto Mono', monospace; z-index: 20;
+}
+#wp-title { color: #8C52FF; font-size: 16px; margin: 0; }
+#wp-info { font-size: 12px; color: #ccc; margin: 5px 0 0 0; }
+
+@keyframes pulse { 
+    0% { transform: scale(1); opacity: 1; } 
+    100% { transform: scale(2.5); opacity: 0; } 
+}
+</style>
