@@ -1,44 +1,41 @@
 <div class="mission-brief-root">
-  <div class="folder-header">
-    <div class="red-seal">AUTHENTICATED</div>
-    <span class="brief-id">ID: GENESIS_BRIEF_001</span>
-  </div>
+  <div class="redacted-strip">RESTRICTED_ACCESS</div>
+  
+  <header class="brief-header">
+    <h3 class="blueprint-label">// OPERATION_GENESIS</h3>
+    <h1 class="hero-title">THE 8-LEG <br><span class="text-glow">HYDRA PROTOCOL.</span></h1>
+    <p class="hero-p">
+      The $250M roadmap is a phased infrastructure deployment designed to create a self-sustaining creative economy.
+    </p>
+  </header>
 
-  <section class="brief-content">
-    <h3 class="brief-label">// MISSION OBJECTIVE</h3>
-    <h1 class="brief-h1">THE $250M MASTER PLAN</h1>
-    <p class="brief-p">Operation Genesis is not a project; it is a system. This master blueprint outlines the phased deployment of 100,000 sq ft of creative infrastructure, backed by a multi-tiered capital strategy.</p>
-    
-    <div class="hydra-protocol">
-      <h2 class="brief-h2">## THE 8-LEG HYDRA PROTOCOL</h2>
-      <div class="hydra-grid">
-        <div class="hydra-leg">01. INFR_NODES (Bridgeport Foundry)</div>
-        <div class="hydra-leg">02. CAP_MARKET (ABL & Equity)</div>
-        <div class="hydra-leg">03. MEDIA_SYNCH (Hyperbolic Studios)</div>
-        <div class="hydra-leg">04. LABOR_EXCH (UGC Content Network)</div>
-        <div class="hydra-leg">05. IP_GOVERNANCE (AZIC DAO)</div>
-        <div class="hydra-leg">06. CULTURAL_STAKE (Sponsorships)</div>
-        <div class="hydra-leg">07. TECH_STACK (Navaander OS)</div>
-        <div class="hydra-leg">08. GLOBAL_EXPANSION (Node Licensing)</div>
-      </div>
+  <div class="hydra-grid-detailed">
+    <div class="asset-card">
+      <span class="leg-num">01</span>
+      <h4>PHYSICAL_INFRA</h4>
+      <p>The Bridgeport Foundry. 100k sq ft creative hub on Barnum Ave.</p>
     </div>
-  </section>
+    <div class="asset-card">
+      <span class="leg-num">02</span>
+      <h4>CAPITAL_MARKET</h4>
+      <p>$1.4M Institutional Credit Facility & Equity Round.</p>
+    </div>
+    <div class="asset-card">
+      <span class="leg-num">03</span>
+      <h4>CONTENT_SYNCH</h4>
+      <p>Hyperbolic Studios: Generating 1,000+ UGC assets weekly.</p>
+    </div>
+    <div class="asset-card">
+      <span class="leg-num">04</span>
+      <h4>LABOR_EXCHANGE</h4>
+      <p>Tokenized registry for local and global creative talent.</p>
+    </div>
+    </div>
 </div>
 
 <style>
-/* FOLDER AESTHETIC STYLES */
-.mission-brief-root { 
-    background: #fdfaf5; color: #1a1a1a; padding: 40px; 
-    border: 1px solid #d1d1d1; box-shadow: 10px 10px 40px rgba(0,0,0,0.1); 
-    max-width: 800px; margin: 0 auto; position: relative; 
-}
-.folder-header { display: flex; justify-content: space-between; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 40px; }
-.red-seal { color: #b22222; font-weight: 900; border: 2px solid #b22222; padding: 5px 15px; transform: rotate(-10deg); font-family: 'Roboto Mono', monospace; }
-.brief-id { font-family: 'Roboto Mono', monospace; font-size: 12px; opacity: 0.5; }
-.brief-label { font-family: 'Roboto Mono', monospace; color: #b22222; font-size: 12px; margin-bottom: 10px; }
-.brief-h1 { font-size: clamp(1.5rem, 5vw, 3rem); font-weight: 900; line-height: 1; margin: 0 0 20px 0; }
-.brief-p { font-size: 16px; line-height: 1.6; color: #333; }
-.brief-h2 { font-size: 1.2rem; font-weight: 900; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px; }
-.hydra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 20px; }
-.hydra-leg { background: #1a1a1a; color: #fff; padding: 15px; font-family: 'Roboto Mono', monospace; font-size: 11px; text-align: center; }
+.hydra-grid-detailed { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 50px; }
+.leg-num { color: var(--az-med); font-weight: 900; font-family: 'Roboto Mono'; font-size: 24px; }
+.hydra-grid-detailed h4 { margin: 10px 0; letter-spacing: 1px; }
+.hydra-grid-detailed p { font-size: 12px; opacity: 0.7; }
 </style>
