@@ -1,44 +1,66 @@
+/* AZIC // LUMEN ENGINE v7.1 (ULTRA-POLISHED) */
 :root {
     --az-deep: #05000a;
     --az-med: #8C52FF;
     --az-light: #C9A8FF;
     --az-white: #ffffff;
     --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(140, 82, 255, 0.2);
-    --radius: 20px; /* Softer, high-end curves */
+    --glass-border: rgba(140, 82, 255, 0.15);
+    --radius: 30px; 
 }
+
+* { box-sizing: border-box; }
 
 body { 
-    background: radial-gradient(circle at top right, #110022, var(--az-deep)); 
-    color: var(--az-white); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6;
+    background: radial-gradient(circle at top right, #1a0033, #05000a); 
+    color: var(--az-white); 
+    font-family: 'Inter', sans-serif; 
+    margin: 0; 
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* Glassmorphism Cards */
-.asset-card, .mission-brief-root, .ledger-paper, .terminal-root {
+/* Glassmorphism Navigation */
+.os-header {
+    background: rgba(0,0,0,0.6) !important;
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border) !important;
+    margin: 20px; 
+    border-radius: 60px;
+    padding: 12px 35px !important;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 20px; z-index: 1000;
+}
+
+.logo { font-weight: 900; font-size: 22px; letter-spacing: -1px; cursor: pointer; }
+.system-id { font-family: 'Roboto Mono'; font-size: 10px; color: var(--az-med); margin-left: 10px; }
+
+.os-nav { display: flex; gap: 10px; }
+.os-nav button {
+    background: transparent; border: 1px solid transparent;
+    color: var(--az-white); padding: 8px 18px; border-radius: 50px;
+    cursor: pointer; transition: 0.3s; font-family: 'Roboto Mono'; font-size: 11px;
+}
+.os-nav button:hover { background: var(--glass); border-color: var(--glass-border); }
+
+.jeff-btn { background: var(--az-med) !important; color: #000 !important; font-weight: 900 !important; }
+
+/* Global Glass Cards */
+.asset-card, .stat-card, .mission-brief-root, .terminal-root, .ledger-paper, .manifest-info-card {
     background: var(--glass) !important;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(30px);
     border: 1px solid var(--glass-border) !important;
     border-radius: var(--radius) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.asset-card:hover { transform: translateY(-5px); border-color: var(--az-med) !important; }
+#viewport { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
 
-/* Home / Desktop Layout */
-.desktop-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; padding: 20px;
-}
+.os-footer { padding: 40px; text-align: center; font-family: 'Roboto Mono'; font-size: 10px; opacity: 0.4; }
 
-/* Typography Polish */
-h1, h2, h3 { letter-spacing: -0.05em; font-weight: 900; }
-.brief-p { font-size: 1.1rem; opacity: 0.8; }
-
-/* Responsive Header */
-.os-header {
-    background: rgba(0,0,0,0.5) !important;
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border) !important;
-    border-radius: 0 0 20px 20px; margin: 0 10px;
+/* Mobile Polish */
+@media (max-width: 768px) {
+    .os-header { flex-direction: column; border-radius: 30px; padding: 20px !important; }
+    .os-nav { margin-top: 15px; overflow-x: auto; width: 100%; justify-content: flex-start; }
 }
