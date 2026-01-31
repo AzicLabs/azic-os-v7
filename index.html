@@ -7,24 +7,23 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="theme-midnight">
-
+<body>
     <header class="os-header">
-        <div class="logo-group">
+        <div class="logo-group" onclick="nav('home')">
             <span class="logo">AZIC</span>
-            <span class="system-id">OS_v7.0</span>
+            <span class="system-id">OS_v7.1_STABLE</span>
         </div>
         <nav class="os-nav">
+            <button onclick="nav('home')">HOME</button>
             <button onclick="nav('mission')">MISSION</button>
             <button onclick="nav('manifest')">MANIFEST</button>
             <button onclick="nav('genesis')">ALLIANCE</button>
-            <button onclick="nav('dashboard')" class="jeff-btn">DASHBOARD</button>
+            <button onclick="nav('dashboard')" class="jeff-btn">INVESTOR_PORTAL</button>
         </nav>
     </header>
 
     <main id="viewport">
-        <div class="loading-state">INITIALIZING_SYSTEM...</div>
-    </main>
+        </main>
 
     <footer class="os-footer">
         <div class="status-zap">AZC: 500Q | KINETIC_FLOW: RESONATING</div>
