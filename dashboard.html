@@ -1,0 +1,73 @@
+<div class="dashboard-root">
+  <header class="dash-header">
+    <h1 class="blueprint-title">EXECUTIVE PORTAL</h1>
+    <p class="blueprint-subtitle">// UNDERWRITER'S PROTOCOL VERIFICATION</p>
+  </header>
+
+  <div class="dash-grid">
+    <div class="asset-card active-asset">
+      <h3 class="blueprint-label">// ASSET_VALUATION</h3>
+      <h2 class="asset-title">## $17.2M - $27.5M</h2>
+      <p class="asset-desc">Baseline valuation anchored by the FounderShield/Baldwin Group ecosystem analysis.</p>
+      <div class="status-pill">STATUS: ARCHITECTURE_LOCKED</div>
+    </div>
+
+    <div class="asset-card">
+      <h3 class="blueprint-label">// PROTOCOL_SANDBOX</h3>
+      <h2 class="asset-title">## SYSTEM_TEST</h2>
+      <p class="asset-desc">Initialize the "Non-Fail" Unified Consensus mechanism to verify node resonance.</p>
+      
+      <button class="ledger-submit" onclick="runJeffTest()">INITIALIZE_TEST</button>
+      
+      <div id="test-console" class="terminal-mini">
+        <span class="prefix">SYS@NAVAANDER:~$</span> _
+      </div>
+    </div>
+  </div>
+
+  <div class="ledger-paper">
+    <h3 class="ledger-title-text">Institutional Facility Breakdown ($1.4M)</h3>
+    <div class="funding-meter-wrapper">
+      <div class="meter-base"><div class="meter-fill" style="width: 5%;"></div></div>
+      <p style="font-size:10px; font-family:monospace; margin-top:5px;">CURRENT_LTV: 5% // FACILITY_RESERVED_FOR_ALLIANCE</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function runJeffTest() {
+    const consoleBox = document.getElementById('test-console');
+    const logs = [
+      "Starting Boot Sequence...",
+      "Syncing 500Q Keystone Reserve...",
+      "Connecting to Bridgeport Node_01...",
+      "Triggering Proof of Resonance...",
+      "[SUCCESS] NODE_VERIFIED_WITHOUT_FAILURE."
+    ];
+    
+    let i = 0;
+    consoleBox.innerHTML = "";
+    const interval = setInterval(() => {
+      const line = document.createElement('div');
+      line.style.color = i === 4 ? "#27c93f" : "#8C52FF";
+      line.innerText = `>> ${logs[i]}`;
+      consoleBox.appendChild(line);
+      i++;
+      if (i >= logs.length) clearInterval(interval);
+    }, 800);
+  }
+</script>
+
+<style>
+.dashboard-root { padding: 20px; font-family: 'Inter', sans-serif; }
+.dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+.terminal-mini { 
+    background: #000; color: #8C52FF; padding: 15px; border-radius: 4px; 
+    margin-top: 15px; font-family: 'Roboto Mono', monospace; font-size: 11px; min-height: 80px; 
+}
+.status-pill { 
+    display: inline-block; background: rgba(39, 201, 63, 0.1); color: #27c93f; 
+    padding: 5px 10px; border-radius: 20px; font-size: 10px; font-weight: 900; margin-top: 10px; 
+}
+/* Reusing core styles from genesis and manifest for consistency */
+</style>
