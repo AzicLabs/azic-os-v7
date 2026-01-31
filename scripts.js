@@ -1,49 +1,47 @@
-/* AZIC // SOVEREIGN LOGIC ENGINE v7.0 */
+/* AZIC // SOVEREIGN LOGIC ENGINE v7.1 */
 
-// 1. NAVIGATION SYSTEM (The Router)
 function nav(page) {
     const viewport = document.getElementById('viewport');
     
-    // Start fade out
+    // Fade out effect
     viewport.style.opacity = '0';
-    viewport.style.transition = 'opacity 0.3s ease';
+    viewport.style.transform = 'translateY(10px)';
+    viewport.style.transition = 'all 0.3s ease';
 
     setTimeout(() => {
         fetch(`${page}.html`)
-            .then(response => {
-                if (!response.ok) throw new Error('SIGNAL_FAILED');
-                return response.text();
+            .then(res => {
+                if (!res.ok) throw new Error('SIGNAL_FAILED');
+                return res.text();
             })
             .then(html => {
                 viewport.innerHTML = html;
                 viewport.style.opacity = '1';
-                // Trigger security check on every successful navigation
+                viewport.style.transform = 'translateY(0)';
+                window.scrollTo(0,0);
                 trackInteraction();
             })
             .catch(err => {
-                viewport.innerHTML = `<div style="color:red; font-family:monospace; padding:20px;">>> ERROR: ${err.message} << <br> Ensure ${page}.html is created.</div>`;
+                viewport.innerHTML = `<div class="asset-card" style="padding:40px; text-align:center;">
+                    <h2 style="color:var(--az-med)">>> CONNECTION_ERROR <<</h2>
+                    <p>Frequency for <strong>${page}.html</strong> not found. Build the file to restore signal.</p>
+                </div>`;
                 viewport.style.opacity = '1';
             });
     }, 300);
 }
 
-// 2. SECURITY GATE (The Bandwidth Limit)
-let interactionCount = 0;
-
+let clicks = 0;
 function trackInteraction() {
-    interactionCount++;
-    console.log(`[SYS] Interaction Count: ${interactionCount}/5`);
-    
-    if (interactionCount >= 10) { // Set to 10 for testing, change to 5 for final "Jeff" demo
-        document.body.style.filter = "blur(15px)";
+    clicks++;
+    if (clicks >= 15) { // Set to 15 for your testing, lower to 5 for Jeff
+        document.body.style.filter = "blur(20px)";
         document.body.style.pointerEvents = "none";
-        alert("CRITICAL: BANDWIDTH_LIMIT_REACHED. ENLIST_TO_RESTORE_FREQUENCY.");
+        alert("CRITICAL: BANDWIDTH_EXCEEDED. ENLIST TO RESTORE.");
     }
 }
 
-// 3. BOOT SEQUENCE
 window.onload = () => {
-    console.log("[SYS] NAVAANDER_OS_BOOT_COMPLETE");
-    // Start by loading the mission page automatically
-    nav('mission');
+    console.log("[SYS] NAVAANDER_BOOT_v7.1_SUCCESS");
+    nav('home'); // Set default landing to Home
 };
