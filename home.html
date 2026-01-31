@@ -1,31 +1,64 @@
-<div class="home-hero">
-  <div class="hero-content">
-    <h3 class="blueprint-label" style="color:var(--az-med); font-family:'Roboto Mono'; letter-spacing:4px;">// INITIALIZING_FREQUENCIES</h3>
-    <h1 style="font-size: clamp(2.5rem, 8vw, 5rem); line-height:0.85; margin: 20px 0; font-weight:900; letter-spacing:-3px;">
-        A CREATIVE ECONOMY <br><span style="color:var(--az-med); text-shadow: 0 0 30px rgba(140,82,255,0.4);">SOVEREIGNLY BUILT.</span>
-    </h1>
-    <p style="max-width:650px; font-size:1.2rem; opacity:0.7; margin-bottom:40px; line-height:1.4;">
-        Azic is a venture studio and infrastructure layer developing the 100,000 sq ft <strong>Bridgeport Foundry</strong> and the <strong>Navaander Blockchain Universe</strong>.
-    </p>
-    
-    <div style="display:flex; gap:15px; flex-wrap:wrap;">
-      <button onclick="nav('mission')" style="background:var(--az-med); color:#000; padding:20px 40px; border:none; font-weight:900; border-radius:50px; cursor:pointer;">THE_BRIEF</button>
-      <button onclick="nav('genesis')" style="background:rgba(255,255,255,0.05); color:#fff; padding:20px 40px; border:1px solid var(--glass-border); border-radius:50px; cursor:pointer; backdrop-filter:blur(10px);">STRATEGIC_ALLIANCE</button>
+<div class="home-container">
+  <section class="home-hero">
+    <div class="hero-content">
+      <h3 class="blueprint-label">// SYSTEM_INITIALIZED</h3>
+      <h1 class="hero-title">A CREATIVE ECONOMY <br><span class="text-glow">SOVEREIGNLY BUILT.</span></h1>
+      <p class="hero-p">
+        Azic is a venture studio developing the <strong>Bridgeport Foundry</strong>: 100,000 sq ft of creative infrastructure 
+        integrated with the <strong>Navaander Blockchain Universe</strong>. We are anchoring physical real estate 
+        to a digital sovereign economy.
+      </p>
+      <div class="hero-actions">
+        <button class="cta-primary" onclick="nav('mission')">ENTER_OPERATION_GENESIS</button>
+        <button class="cta-secondary" onclick="nav('genesis')">ENLIST_AS_PARTNER</button>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:100px;">
-    <div class="stat-card" style="padding:40px 30px;">
-      <span style="display:block; font-size:2.5rem; font-weight:900; color:var(--az-med);">$25M+</span>
-      <span style="font-family:'Roboto Mono'; font-size:10px; opacity:0.5; letter-spacing:2px;">VALUATION_ANCHOR</span>
+  <section class="stat-row">
+    <div class="stat-card">
+      <span class="stat-num">$27.5M</span>
+      <span class="stat-label">VALUATION_ANCHOR</span>
+      <p class="stat-sub">Baseline architecture locked via the Hydra Protocol.</p>
     </div>
-    <div class="stat-card" style="padding:40px 30px;">
-      <span style="display:block; font-size:2.5rem; font-weight:900; color:var(--az-med);">100K</span>
-      <span style="font-family:'Roboto Mono'; font-size:10px; opacity:0.5; letter-spacing:2px;">SQ_FT_INFRA_NODE</span>
+    <div class="stat-card">
+      <span class="stat-num">100K</span>
+      <span class="stat-label">SQ_FT_INFRA_NODE</span>
+      <p class="stat-sub">The Foundry: Bridgeport, CT Node_01.</p>
     </div>
-    <div class="stat-card" style="padding:40px 30px;">
-      <span style="display:block; font-size:2.5rem; font-weight:900; color:var(--az-med);">500Q</span>
-      <span style="font-family:'Roboto Mono'; font-size:10px; opacity:0.5; letter-spacing:2px;">KEYSTONE_RESERVE</span>
+    <div class="stat-card">
+      <span class="stat-num">500Q</span>
+      <span class="stat-label">KEYSTONE_RESERVE</span>
+      <p class="stat-sub">Native asset supply for the Navaander OS.</p>
     </div>
-  </div>
+  </section>
+
+  <section class="home-details asset-card">
+    <h3 class="blueprint-label">// THE_MISSION</h3>
+    <h2 class="section-h2">Anchoring the Digital to the Physical</h2>
+    <p class="section-p">
+      Most blockchain projects lack a physical anchor. Azic solves this through the <strong>Triple-Tether System</strong>. 
+      Every digital asset in the Navaander OS is verified against real-world creative output at the <strong>Bridgeport Foundry</strong>.
+    </p>
+    <ul class="mission-list">
+      <li><strong>Node 01:</strong> 100,000 sq ft of studios, fabrication labs, and content hubs.</li>
+      <li><strong>The Ledger:</strong> Decentralized labor exchange for creative operatives.</li>
+      <li><strong>The Forge:</strong> A phygital marketplace for verified brand inventory.</li>
+    </ul>
+  </section>
 </div>
+
+<style>
+.home-container { display: flex; flex-direction: column; gap: 60px; padding-bottom: 100px; }
+.home-hero { min-height: 60vh; display: flex; align-items: center; }
+.hero-title { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 0.85; margin: 20px 0; font-weight: 900; letter-spacing: -4px; }
+.text-glow { color: var(--az-med); text-shadow: 0 0 30px rgba(140,82,255,0.4); }
+.hero-p { max-width: 700px; font-size: 1.25rem; opacity: 0.8; line-height: 1.5; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.stat-sub { font-size: 11px; opacity: 0.5; margin-top: 10px; font-family: 'Roboto Mono'; }
+.section-h2 { font-size: 2.5rem; margin-bottom: 20px; letter-spacing: -1px; }
+.section-p { font-size: 1.1rem; opacity: 0.8; max-width: 800px; margin-bottom: 30px; }
+.mission-list { list-style: none; padding: 0; }
+.mission-list li { padding: 15px 0; border-bottom: 1px solid var(--glass-border); font-family: 'Roboto Mono'; font-size: 13px; }
+.mission-list li strong { color: var(--az-med); }
+</style>
