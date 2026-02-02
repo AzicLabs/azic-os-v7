@@ -12,27 +12,28 @@
         <div class="logo-group" onclick="nav('home')">
             <span class="logo">AZIC</span>
         </div>
+        
+        <div class="search-container">
+            <input type="text" id="siteSearch" class="search-bar" placeholder="SEARCH SYSTEM..." onkeyup="searchSystem()">
+        </div>
+
         <nav class="os-nav">
             <button onclick="nav('home')">HOME</button>
-            <button onclick="nav('mission')">MISSION BRIEF</button>
-            <button onclick="nav('manifest')">EXPEDITION MANIFEST</button>
+            <button onclick="nav('depot')">DEPOT</button>
             <div class="dropdown">
-                <button class="dropbtn">OPERATION GENESIS ▾</button>
+                <button class="dropbtn">OPERATIONS ▾</button>
                 <div class="dropdown-content">
-                    <a href="#" onclick="nav('genesis')">MEMBERSHIPS</a>
+                    <a href="#" onclick="nav('mission')">MISSION BRIEF</a>
+                    <a href="#" onclick="nav('manifest')">MANIFEST</a>
                     <a href="#" onclick="nav('believers')">BELIEVERS ROUND</a>
-                    <a href="#" onclick="nav('console')">INVESTOR CONSOLE</a>
+                    <a href="#" onclick="nav('console')">CONSOLE</a>
                 </div>
             </div>
+            <button onclick="nav('comms')">COMMS</button>
         </nav>
     </header>
 
-    <main id="viewport">
-        </main>
-
-    <footer style="text-align:center; padding:80px 40px; font-size:10px; opacity:0.3; letter-spacing:2px;">
-        AZIC LABS : ESTABLISHED 2026 : BRIDGEPORT CONNECTICUT
-    </footer>
+    <main id="viewport"></main>
 
     <script src="scripts.js"></script>
 </body>
