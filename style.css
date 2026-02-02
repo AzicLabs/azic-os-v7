@@ -1,32 +1,17 @@
-/* AZIC // LUMEN ENGINE v7.1 (ULTRA-POLISHED)
-   Architecture: Sovereign OS Core
-   Design Language: Kinetic Glassmorphism
-*/
-
+/* AZIC // LUMEN ENGINE v7.2 (ARCHITECTURE LOCKED) */
 :root {
-    /* Color Palette */
     --az-deep: #05000a;
     --az-med: #8C52FF;
     --az-light: #C9A8FF;
     --az-white: #ffffff;
-    --az-red: #d00000;
-    
-    /* Glassmorphism Variables */
     --glass: rgba(255, 255, 255, 0.03);
-    --glass-heavy: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(140, 82, 255, 0.15);
-    --glass-blur: blur(25px);
-    
-    /* Global Curves */
+    --glass-heavy: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(140, 82, 255, 0.2);
     --radius: 30px;
     --radius-pill: 60px;
 }
 
-/* 1. Global Resets & Body */
-* { 
-    box-sizing: border-box; 
-    -webkit-font-smoothing: antialiased;
-}
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
 body { 
     background: radial-gradient(circle at top right, #1a0033, #05000a); 
@@ -39,130 +24,62 @@ body {
     line-height: 1.6;
 }
 
-/* 2. Standard Typography */
-h1, h2, h3, h4 { 
-    margin: 0; 
-    font-weight: 900; 
-    letter-spacing: -0.04em; 
-}
-
-p { opacity: 0.8; font-size: 1.1rem; }
-
-.blueprint-label { 
-    color: var(--az-med); 
-    font-family: 'Roboto Mono', monospace; 
-    font-size: 11px; 
-    letter-spacing: 4px; 
-    font-weight: 700; 
-    text-transform: uppercase;
-}
-
-/* 3. The Sovereign Navigation (OS Header) */
+/* NAVIGATION */
 .os-header {
-    background: rgba(0,0,0,0.6) !important;
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border) !important;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
     margin: 20px; 
     border-radius: var(--radius-pill);
-    padding: 12px 35px !important;
+    padding: 12px 30px;
     display: flex; justify-content: space-between; align-items: center;
     position: sticky; top: 20px; z-index: 1000;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.logo-group { cursor: pointer; display: flex; align-items: center; }
-.logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
-.system-id { 
-    font-family: 'Roboto Mono'; 
-    font-size: 10px; 
-    color: var(--az-med); 
-    margin-left: 12px; 
-    opacity: 0.7;
-}
+.logo { font-weight: 900; font-size: 22px; letter-spacing: -1px; cursor: pointer; }
+.system-id { font-family: 'Roboto Mono'; font-size: 10px; color: var(--az-med); margin-left: 10px; opacity: 0.6; }
 
-.os-nav { display: flex; gap: 8px; }
 .os-nav button {
     background: transparent; border: 1px solid transparent;
-    color: var(--az-white); padding: 10px 20px; border-radius: var(--radius-pill);
-    cursor: pointer; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-    font-family: 'Roboto Mono'; font-size: 11px;
+    color: var(--az-white); padding: 8px 18px; border-radius: 50px;
+    cursor: pointer; transition: 0.3s; font-family: 'Roboto Mono'; font-size: 11px;
 }
+.os-nav button:hover { background: var(--glass); border-color: var(--glass-border); }
+.jeff-btn { background: var(--az-med) !important; color: #000 !important; font-weight: 900 !important; }
 
-.os-nav button:hover { background: var(--glass); border-color: var(--glass-border); transform: translateY(-2px); }
+/* LAYOUT */
+#viewport { padding: 80px 20px; max-width: 1200px; margin: 0 auto; animation: fadeIn 0.6s ease-out; }
 
-.jeff-btn { 
-    background: var(--az-med) !important; 
-    color: #000 !important; 
-    font-weight: 900 !important; 
-    box-shadow: 0 0 20px rgba(140, 82, 255, 0.3);
-}
-
-/* 4. Layout & Viewport */
-#viewport { 
-    padding: 100px 20px 60px 20px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    min-height: 100vh;
-}
-
-/* 5. Glassmorphism Components (The Fix for "Boxy") */
-.asset-card, .stat-card, .mission-brief-root, .terminal-root, .ledger-paper, .manifest-info-card {
-    background: var(--glass) !important;
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border) !important;
-    border-radius: var(--radius) !important;
+/* COMPONENTS */
+.asset-card {
+    background: var(--glass);
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
     padding: 40px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     margin-bottom: 25px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-.asset-card:hover { transform: scale(1.01); border-color: var(--az-med) !important; }
-
-/* 6. Utility Elements */
-.text-glow { 
-    color: var(--az-med); 
-    text-shadow: 0 0 30px rgba(140, 82, 255, 0.5); 
-}
-
-.hero-actions { display: flex; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
 
 .cta-primary { 
-    background: var(--az-med); color: #000; padding: 20px 45px; border: none; 
-    font-weight: 900; border-radius: var(--radius-pill); cursor: pointer; font-size: 14px; 
+    background: var(--az-med); color: #000; padding: 18px 40px; border: none; 
+    font-weight: 900; border-radius: var(--radius-pill); cursor: pointer; transition: 0.3s;
 }
 
 .cta-secondary { 
-    background: rgba(255,255,255,0.05); color: #fff; padding: 20px 45px; 
-    border: 1px solid var(--glass-border); border-radius: var(--radius-pill); 
-    cursor: pointer; font-size: 14px; backdrop-filter: blur(10px); 
+    background: rgba(255,255,255,0.05); color: #fff; padding: 18px 40px; 
+    border: 1px solid var(--glass-border); border-radius: var(--radius-pill); cursor: pointer;
 }
 
-/* 7. Specialized Aesthetics */
-.redacted-strip {
-    position: absolute; background: var(--az-red); color: #fff; 
-    padding: 10px 60px; font-weight: 900; top: 30px; left: -50px; 
-    transform: rotate(-45deg); font-family: 'Roboto Mono', monospace; font-size: 11px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 10;
-}
+/* ANIMATIONS */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-.os-footer { 
-    padding: 60px 20px; text-align: center; 
-    font-family: 'Roboto Mono'; font-size: 10px; opacity: 0.4; 
-    letter-spacing: 2px;
-}
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* 8. Custom Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--az-deep); }
-::-webkit-scrollbar-thumb { background: var(--az-med); border-radius: 10px; }
-
-/* 9. Mobile Responsiveness */
+/* MOBILE */
 @media (max-width: 768px) {
-    .os-header { flex-direction: column; border-radius: 20px; padding: 20px !important; margin: 10px; }
-    .os-nav { margin-top: 20px; overflow-x: auto; width: 100%; justify-content: flex-start; padding-bottom: 10px; }
-    .os-nav button { white-space: nowrap; flex-shrink: 0; }
-    #viewport { padding-top: 140px; }
-    .hero-actions { flex-direction: column; }
-    .cta-primary, .cta-secondary { width: 100%; text-align: center; }
+    .os-header { flex-direction: column; border-radius: 25px; padding: 15px; }
+    .os-nav { margin-top: 15px; width: 100%; overflow-x: auto; justify-content: flex-start; }
+    .os-nav button { white-space: nowrap; }
 }
