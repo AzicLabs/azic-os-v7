@@ -1,0 +1,61 @@
+<div class="believers-funding">
+    <section class="asset-card">
+        <h3 style="color:var(--az-med); font-size:11px; letter-spacing:4px; font-weight:900;">STRATEGIC INQUIRY</h3>
+        <h1 style="font-size:3rem; margin:15px 0;">BELIEVERS ROUND</h1>
+        <p style="max-width:750px; opacity:0.8;">
+            Select your contribution level. The system will display the participation perks unlocked at each threshold[cite: 4661].
+        </p>
+    </section>
+
+    <div class="asset-card" style="margin-top:30px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <div id="displayAmount" style="font-size:2.5rem; font-weight:900; color:var(--az-med);">$100</div>
+            <div id="tierLabel" style="font-size:12px; font-weight:900; background:rgba(255,255,255,0.1); padding:8px 15px; border-radius:50px;">SLIDING SCALE</div>
+        </div>
+
+        <input type="range" min="100" max="100000" step="100" value="100" class="snap-range" id="fundingSlider">
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:40px;">
+            <div>
+                <h4 style="font-size:10px; letter-spacing:2px; opacity:0.5; margin-bottom:15px;">PERKS UNLOCKED</h4>
+                <ul id="perksList" style="font-size:14px; line-height:2; opacity:0.9;">
+                    </ul>
+            </div>
+            <div style="background:rgba(0,0,0,0.2); padding:30px; border-radius:12px;">
+                <h4 style="margin-top:0;">INITIALIZE CONTRIBUTION</h4>
+                <p style="font-size:12px; opacity:0.6;">Enter amount manually or use slider:</p>
+                <input type="number" id="manualAmount" placeholder="100" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid var(--glass-border); padding:15px; color:#fff; border-radius:8px; margin-bottom:15px;">
+                <button class="cta-primary" style="width:100%;">CONTRIBUTE NOW</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const slider = document.getElementById('fundingSlider');
+    const amountDisplay = document.getElementById('displayAmount');
+    const tierDisplay = document.getElementById('tierLabel');
+    const perksList = document.getElementById('perksList');
+    const manualInput = document.getElementById('manualAmount');
+
+    const tiers = [
+        { min: 0, label: "SLIDING SCALE", perks: ["Equity in Azic", "Believers Round NFT", "Accumulate shares over time"] },
+        { min: 5000, label: "TIER 1 : BELIEVER", perks: ["Universal Perks", "Exclusive Merch", "State of the Mission Dinner Invite", "Digital Recognition"] },
+        { min: 10000, label: "TIER 2 : COMMITTED", perks: ["All Tier 1 Perks", "Priority Beta Access", "Quarterly Strategy Updates", "Private Event Invite"] },
+        { min: 25000, label: "TIER 3 : FOUNDING", perks: ["All Tier 2 Perks", "Quarterly Group Briefings", "Preview Token Mechanics", "Private Discussion Channels"] },
+        { min: 50000, label: "TIER 4 : STRATEGIC", perks: ["All Tier 3 Perks", "Annual Founder Briefing", "Advisory Roundtable Invite", "Priority Platform Feedback"] },
+        { min: 75000, label: "TIER 5 : FOUNDING CIRCLE", perks: ["All Tier 4 Perks", "Founding Circle Designation", "Strategic Advisory Consideration", "Ecosystem Participation Privileges"] }
+    ];
+
+    function updateView(val) {
+        amountDisplay.textContent = "$" + parseInt(val).toLocaleString();
+        manualInput.value = val;
+        const currentTier = [...tiers].reverse().find(t => val >= t.min);
+        tierDisplay.textContent = currentTier.label;
+        perksList.innerHTML = currentTier.perks.map(p => `<li>✓ ${p}</li>`).join('');
+    }
+
+    slider.oninput = function() { updateView(this.value); };
+    manualInput.oninput = function() { updateView(this.value); slider.value = this.value; };
+    updateView(100);
+</script>
