@@ -1,9 +1,10 @@
-/* AZIC // LUMEN ENGINE v7.4 (SKY_RISE) */
+/* AZIC // LUMEN ENGINE v7.5 (ARCHITECTURE LOCKED) */
 :root {
-    --az-sky: #4b2c85; /* Ethereal Purple */
-    --az-med: #8C52FF;
+    --az-sky: #4b2c85; /* Ethereal Sky Purple */
+    --az-med: #8C52FF; /* Core Azic Purple */
+    --az-light: #C9A8FF; /* Highlight Purple */
     --az-deep: #05000a; /* Deep Space Black */
-    --az-white: #ffffff;
+    --az-white: #F5F5F5;
     --glass: rgba(255, 255, 255, 0.04);
     --glass-border: rgba(140, 82, 255, 0.2);
     --radius: 24px;
@@ -12,7 +13,7 @@
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
 body { 
-    /* Labs to the Sky Gradient */
+    /* Labs to the Sky: Light at top, Deep Space at bottom */
     background: linear-gradient(180deg, var(--az-sky) 0%, var(--az-deep) 40%, var(--az-deep) 100%);
     background-attachment: fixed;
     color: var(--az-white); 
@@ -41,7 +42,7 @@ body {
 }
 .os-nav button:hover, .dropdown:hover .dropbtn { color: var(--az-light); transform: translateY(-2px); }
 
-/* Dropdown Logic */
+/* Dropdown Content */
 .dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     display: none; position: absolute; background: rgba(10, 0, 20, 0.95);
@@ -66,10 +67,7 @@ body {
 }
 .asset-card:hover { transform: translateY(-10px); border-color: var(--az-med); box-shadow: 0 10px 40px rgba(140, 82, 255, 0.1); }
 
-@keyframes floatIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes floatIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
 .cta-primary { 
     background: var(--az-med); color: #000; padding: 18px 45px; border: none; 
@@ -77,7 +75,5 @@ body {
 }
 .cta-primary:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(140, 82, 255, 0.4); }
 
-@media (max-width: 768px) {
-    .os-header { flex-direction: column; padding: 20px; }
-    .os-nav { margin-top: 15px; overflow-x: auto; width: 100%; justify-content: center; }
-}
+/* Slider Styling */
+.snap-range { width: 100%; accent-color: var(--az-med); cursor: pointer; margin: 20px 0; }
