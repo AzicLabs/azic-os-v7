@@ -1,85 +1,59 @@
-/* AZIC // LUMEN ENGINE v7.2 (ARCHITECTURE LOCKED) */
+/* AZIC // LUMEN ENGINE v7.3 (GENESIS_PULL) */
 :root {
     --az-deep: #05000a;
     --az-med: #8C52FF;
     --az-light: #C9A8FF;
     --az-white: #ffffff;
     --glass: rgba(255, 255, 255, 0.03);
-    --glass-heavy: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(140, 82, 255, 0.2);
-    --radius: 30px;
-    --radius-pill: 60px;
+    --radius: 24px;
 }
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
 body { 
-    background: radial-gradient(circle at top right, #1a0033, #05000a); 
-    background-attachment: fixed;
-    color: var(--az-white); 
-    font-family: 'Inter', sans-serif; 
-    margin: 0; 
-    min-height: 100vh;
-    overflow-x: hidden;
-    line-height: 1.6;
+    background: radial-gradient(circle at top right, #110022, #05000a); 
+    color: var(--az-white); font-family: 'Inter', sans-serif; margin: 0; 
+    min-height: 100vh; overflow-x: hidden; line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* MISSION BAR */
 .os-header {
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    margin: 20px; 
-    border-radius: var(--radius-pill);
-    padding: 12px 30px;
-    display: flex; justify-content: space-between; align-items: center;
-    position: sticky; top: 20px; z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 40px; display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 1000;
 }
 
 .logo { font-weight: 900; font-size: 22px; letter-spacing: -1px; cursor: pointer; }
-.system-id { font-family: 'Roboto Mono'; font-size: 10px; color: var(--az-med); margin-left: 10px; opacity: 0.6; }
 
 .os-nav button {
-    background: transparent; border: 1px solid transparent;
-    color: var(--az-white); padding: 8px 18px; border-radius: 50px;
-    cursor: pointer; transition: 0.3s; font-family: 'Roboto Mono'; font-size: 11px;
+    background: transparent; border: none; color: var(--az-white); 
+    padding: 8px 15px; cursor: pointer; font-family: 'Roboto Mono'; font-size: 11px; opacity: 0.7;
 }
-.os-nav button:hover { background: var(--glass); border-color: var(--glass-border); }
-.jeff-btn { background: var(--az-med) !important; color: #000 !important; font-weight: 900 !important; }
+.os-nav button:hover { opacity: 1; color: var(--az-med); }
 
-/* LAYOUT */
-#viewport { padding: 80px 20px; max-width: 1200px; margin: 0 auto; animation: fadeIn 0.6s ease-out; }
-
-/* COMPONENTS */
+/* TERMINAL COMPONENTS */
 .asset-card {
-    background: var(--glass);
-    backdrop-filter: blur(30px);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius);
-    padding: 40px;
-    margin-bottom: 25px;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: var(--glass); backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border); border-radius: var(--radius);
+    padding: 40px; margin-bottom: 25px;
+}
+
+.status-tag { 
+    font-family: 'Roboto Mono'; font-size: 11px; color: var(--az-med); 
+    letter-spacing: 2px; border-bottom: 1px solid var(--az-med); padding-bottom: 5px; margin-bottom: 20px; display: inline-block;
 }
 
 .cta-primary { 
     background: var(--az-med); color: #000; padding: 18px 40px; border: none; 
-    font-weight: 900; border-radius: var(--radius-pill); cursor: pointer; transition: 0.3s;
-}
-
-.cta-secondary { 
-    background: rgba(255,255,255,0.05); color: #fff; padding: 18px 40px; 
-    border: 1px solid var(--glass-border); border-radius: var(--radius-pill); cursor: pointer;
+    font-weight: 900; border-radius: 4px; cursor: pointer; font-family: 'Roboto Mono';
 }
 
 /* ANIMATIONS */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* MOBILE */
 @media (max-width: 768px) {
-    .os-header { flex-direction: column; border-radius: 25px; padding: 15px; }
-    .os-nav { margin-top: 15px; width: 100%; overflow-x: auto; justify-content: flex-start; }
-    .os-nav button { white-space: nowrap; }
+    .os-header { flex-direction: column; padding: 20px; }
+    .os-nav { margin-top: 15px; display: flex; overflow-x: auto; width: 100%; }
 }
