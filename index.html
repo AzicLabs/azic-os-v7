@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZIC // OPERATION: GENESIS</title>
+    <title>AZIC // SOVEREIGN HUB</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="os-header">
@@ -14,17 +14,23 @@
         </div>
         <nav class="os-nav">
             <button onclick="nav('home')">HOME</button>
-            <button onclick="nav('mission')">MISSION</button>
-            <button onclick="nav('manifest')">MANIFEST</button>
-            <button onclick="nav('comms')">COMMS</button>
-            <button onclick="nav('dashboard')" class="jeff-btn">INVESTOR</button>
+            <button onclick="nav('mission')">MISSION BRIEF</button>
+            <button onclick="nav('manifest')">EXPEDITION MANIFEST</button>
+            <div class="dropdown">
+                <button class="dropbtn">OPERATION GENESIS ▾</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="nav('genesis')">ENLIST AS OPERATIVE</a>
+                    <a href="#" onclick="nav('dashboard')">BELIEVERS ROUND</a>
+                    <a href="#" onclick="nav('app-dashboard')">INVESTOR DASHBOARD</a>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main id="viewport"></main>
 
-    <footer style="text-align:center; padding:40px; font-family:'Roboto Mono'; font-size:10px; opacity:0.4;">
-        © 2026 AZIC LABS // BRIDGEPORT_NODE_01
+    <footer style="text-align:center; padding:80px 40px; font-size:10px; opacity:0.3; letter-spacing:2px;">
+        AZIC LABS : ESTABLISHED 2026 : BRIDGEPORT CONNECTICUT
     </footer>
 
     <script src="scripts.js"></script>
