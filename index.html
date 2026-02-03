@@ -8,9 +8,9 @@
 </head>
 <body>
     <header class="os-header">
-        <div class="logo" onclick="nav('home')">AZIC</div>
+        <div class="logo" onclick="nav('home')" style="font-weight:900; font-size:24px; cursor:pointer;">AZIC</div>
         
-        <div style="display:flex; align-items:center; gap:20px;">
+        <div style="display:flex; align-items:center; gap:25px;">
             <div class="search-wrapper">
                 <input type="text" id="stealthSearch" class="search-input" placeholder="SEARCH SYSTEM..." onkeyup="searchSystem()">
                 <div class="search-trigger" onclick="toggleSearch()">🔍</div>
@@ -24,7 +24,7 @@
                 <button onclick="nav('believers')" style="color:var(--az-med)">BELIEVERS ROUND</button>
             </nav>
 
-            <div class="hamburger" onclick="toggleMobileMenu()">
+            <div class="hamburger" id="hamb" onclick="toggleMobileMenu()">
                 <span></span><span></span><span></span>
             </div>
         </div>
@@ -38,11 +38,15 @@
         <button onclick="nav('believers'); toggleMobileMenu()">BELIEVERS ROUND</button>
     </div>
 
-    <main id="viewport"></main>
+    <main id="viewport" style="padding: 40px 5%; max-width: 1200px; margin: 0 auto;"></main>
 
     <script>
         function toggleSearch() { document.getElementById('stealthSearch').classList.toggle('active'); }
-        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+        function toggleMobileMenu() { 
+            document.getElementById('mobileMenu').classList.toggle('active');
+            const spans = document.querySelectorAll('.hamburger span');
+            document.getElementById('mobileMenu').classList.contains('active') ? spans[1].style.opacity = '0' : spans[1].style.opacity = '1';
+        }
     </script>
     <script src="scripts.js"></script>
 </body>
