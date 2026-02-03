@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZIC // OPERATION GENESIS</title>
+    <title>AZIC // OPERATION: GENESIS</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            THE CREATIVE RESISTANCE STARTS HERE // THE CREATIVE RESISTANCE STARTS HERE // THE CREATIVE RESISTANCE STARTS HERE // THE CREATIVE RESISTANCE STARTS HERE // 
+        </div>
+    </div>
+
     <header class="os-header">
-        <div class="logo" onclick="nav('home')" style="font-weight:900; font-size:24px; cursor:pointer;">AZIC</div>
+        <div class="logo" onclick="nav('home')" style="font-family:var(--font-primary); font-weight:700; cursor:pointer;">AZIC</div>
         
-        <div style="display:flex; align-items:center; gap:25px;">
-            <div class="search-wrapper">
-                <input type="text" id="stealthSearch" class="search-input" placeholder="SEARCH SYSTEM..." onkeyup="searchSystem()">
-                <div class="search-trigger" onclick="toggleSearch()">🔍</div>
+        <div style="display:flex; align-items:center; gap:20px;">
+            <div style="position:relative; display:flex; align-items:center;">
+                <input type="text" id="stealthSearch" class="search-input" placeholder="SEARCH SYSTEM...">
+                <div onclick="toggleSearch()" style="cursor:pointer; font-size:18px;">🔍</div>
             </div>
 
             <nav class="os-nav">
@@ -21,10 +28,10 @@
                 <button onclick="nav('mission')">MISSION BRIEF</button>
                 <button onclick="nav('manifest')">MANIFEST</button>
                 <button onclick="nav('depot')">DEPOT</button>
-                <button onclick="nav('believers')" style="color:var(--az-med)">BELIEVERS ROUND</button>
+                <button onclick="nav('believers')" style="color:var(--primary-purple)">BELIEVERS ROUND</button>
             </nav>
 
-            <div class="hamburger" id="hamb" onclick="toggleMobileMenu()">
+            <div class="hamburger" onclick="toggleMobileMenu()">
                 <span></span><span></span><span></span>
             </div>
         </div>
@@ -38,15 +45,11 @@
         <button onclick="nav('believers'); toggleMobileMenu()">BELIEVERS ROUND</button>
     </div>
 
-    <main id="viewport" style="padding: 40px 5%; max-width: 1200px; margin: 0 auto;"></main>
+    <main id="viewport" style="padding: 40px 5%;"></main>
 
     <script>
         function toggleSearch() { document.getElementById('stealthSearch').classList.toggle('active'); }
-        function toggleMobileMenu() { 
-            document.getElementById('mobileMenu').classList.toggle('active');
-            const spans = document.querySelectorAll('.hamburger span');
-            document.getElementById('mobileMenu').classList.contains('active') ? spans[1].style.opacity = '0' : spans[1].style.opacity = '1';
-        }
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
     </script>
     <script src="scripts.js"></script>
 </body>
