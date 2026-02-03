@@ -1,19 +1,26 @@
-<div class="comms-page theme-radar" style="min-height:80vh; padding:40px; border-radius:24px;">
-    <div class="radar-pulse"></div>
+<div class="comms-terminal theme-radar" style="min-height:85vh; padding:60px 5%; border-radius:var(--radius); margin-top:20px;">
+    <div class="radar-sweep"></div>
     
-    <div style="position:relative; z-index:2;">
-        <section class="asset-card" style="background:rgba(0,0,0,0.6);">
-            <h3 style="color:var(--az-med); font-size:11px; letter-spacing:4px; font-weight:900;">COMMS TERMINAL</h3>
-            <h1 style="font-size:2.5rem; margin:15px 0;">SECURE SIGNAL</h1>
-            <p style="opacity:0.8;">Broadcasting from Bridgeport Node 01. Enter your signal below.</p>
+    <div style="position:relative; z-index:10; max-width:800px; margin:0 auto;">
+        <section class="asset-card" style="background:rgba(0,0,0,0.7);">
+            <h3 style="color:var(--az-med); font-size:11px; letter-spacing:4px; font-weight:900;">SIGNAL DETECTED</h3>
+            <h1 style="font-size:3rem; margin:15px 0;">COMMS CENTER</h1>
+            <p style="opacity:0.8;">Open a secure channel to Mission Command. Broadcasting from Bridgeport Node 01.</p>
         </section>
 
-        <div class="asset-card" style="background:rgba(0,0,0,0.8); font-family:monospace; min-height:200px;">
+        <div class="asset-card theme-console" style="background:rgba(0,0,0,0.85); font-family:'Roboto Mono'; min-height:300px; padding:30px;">
             <div style="color:var(--az-med);">[SYS] SEARCHING FOR FREQUENCIES...</div>
-            <div style="color:#27c93f;">[SYS] BRIDGEPORT NODE 01 : CONNECTED</div>
-            <div style="margin-top:20px;">
-                <span>></span> <input type="text" style="background:transparent; border:none; color:#fff; outline:none; width:80%; font-family:monospace;" placeholder="INITIALIZE BROADCAST...">
+            <div style="color:#27c93f; margin:10px 0;">[SYS] BRIDGEPORT_NODE_01 : SECURE_LINK_ESTABLISHED</div>
+            <div style="opacity:0.4; font-size:12px;">ENCRYPTION: 500Q_KEYSTONE_LOCKED [cite: 5268]</div>
+            
+            <div style="margin-top:40px; display:flex; gap:10px; align-items:center;">
+                <span style="color:var(--az-med); font-weight:900;">></span>
+                <input type="text" style="background:transparent; border:none; color:#fff; outline:none; width:90%; font-size:1.1rem;" placeholder="INITIALIZE BROADCAST..." autofocus>
             </div>
+        </div>
+        
+        <div style="width:100%; height:200px; margin-top:30px; opacity:0.3;">
+            [IMAGE: 3D_BRIDGEPORT_WIREFRAME]
         </div>
     </div>
 </div>
