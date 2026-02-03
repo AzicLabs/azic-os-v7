@@ -1,28 +1,53 @@
-<div class="believers-page theme-paper">
-    <div class="classified-stamp">CLASSIFIED</div>
+<div class="believers-round theme-paper" style="margin-top:40px;">
+    <div style="position:absolute; top:40px; right:40px; color:var(--az-red); border:4px solid var(--az-red); padding:10px 20px; font-weight:900; transform:rotate(15deg); font-size:1.5rem; letter-spacing:2px; opacity:0.8;">CLASSIFIED</div>
     
     <header style="border-bottom: 2px solid #1a1a1a; padding-bottom:20px; margin-bottom:40px;">
-        <h3 style="font-family:'Roboto Mono'; font-size:12px; margin:0;">REF: GENESIS BELIEVERS ROUND</h3>
-        <h1 style="font-size:3rem; margin:10px 0; font-weight:900;">INVESTMENT BRIEF</h1>
+        <h3 style="font-family:'Roboto Mono'; font-size:12px;">REF: OPERATION GENESIS // BELIEVERS ROUND</h3>
+        <h1 style="font-size: clamp(2rem, 6vw, 3.5rem); margin:10px 0;">INVESTMENT BRIEF</h1>
+        <p style="font-size:1.2rem; opacity:0.7;">Anchoring the $27.5M Creative Economy Valuation[cite: 4666].</p>
     </header>
 
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:40px;">
-        <div>
-            <h2 style="border-bottom: 1px solid #ddd; padding-bottom:10px;">The Opportunity</h2>
-            <p style="font-size:15px; line-height:1.8;">
-                Azic is opening a believers round to facilitate the acquisition of Node 01: a 100,000 square foot facility in Bridgeport.
-            </p>
-            <p style="font-size:15px; line-height:1.8;">
-                Target: $1.4M Institutional Facility : Valuation: $27.5M.
-            </p>
+    <div style="background:rgba(0,0,0,0.05); padding:40px; border-radius:8px; border:1px solid #ccc; margin-bottom:50px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div id="amtDisplay" style="font-size:3.5rem; font-weight:900; color:var(--az-med); font-family:'Roboto Mono';">$100</div>
+            <div id="tierTag" style="background:#1a1a1a; color:#fff; padding:8px 20px; border-radius:4px; font-weight:900; font-size:12px;">SLIDING SCALE</div>
         </div>
         
-        <div style="background:rgba(0,0,0,0.03); padding:30px; border: 1px dashed #999;">
-            <h3 style="margin-top:0;">Request Full Access</h3>
-            <p style="font-size:13px; opacity:0.7;">Submit your credentials to receive the physical folder and digital pitch deck.</p>
-            <input type="text" placeholder="ENTITY NAME" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc;">
-            <input type="email" placeholder="SECURE EMAIL" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc;">
-            <button style="width:100%; background:#1a1a1a; color:#fff; border:none; padding:15px; font-weight:900; cursor:pointer;">REQUEST BRIEF</button>
+        <input type="range" min="100" max="100000" step="100" value="100" style="width:100%; accent-color:var(--az-med);" id="fundSlider">
+        
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px; margin-top:40px;">
+            <div id="perkContainer">
+                <h4 style="border-bottom:1px solid #ddd; padding-bottom:10px; text-transform:uppercase;">Unlocking Now:</h4>
+                <ul id="perksActive" style="font-size:14px; line-height:2; padding-left:20px;">
+                    </ul>
+            </div>
+            <div style="background:#fff; border:1px dashed #999; border-radius:8px; display:flex; align-items:center; justify-content:center;">
+                [IMAGE: BELIEVERS_COLLECTIBLE_KIT]
+            </div>
         </div>
+        <button class="cta-primary" style="width:100%; margin-top:40px; background:#1a1a1a; color:#fff; border:none; padding:20px; font-size:1.2rem;">INITIALIZE CONTRIBUTION</button>
     </div>
 </div>
+
+<script>
+    const s = document.getElementById('fundSlider');
+    const a = document.getElementById('amtDisplay');
+    const t = document.getElementById('tierTag');
+    const p = document.getElementById('perksActive');
+
+    const tiers = [
+        { min: 0, label: "SLIDING SCALE", perks: ["Equity in Azic", "Believers Round NFT", "Accumulate shares over time"] },
+        { min: 5000, label: "TIER 1 : BELIEVER", perks: ["Universal Perks", "Exclusive Merch", "State of the Mission Dinner Invite", "Digital Recognition"] },
+        { min: 10000, label: "TIER 2 : COMMITTED", perks: ["All Tier 1 Perks", "Priority Beta Access", "Quarterly Strategy Updates", "Private Event Invite"] },
+        { min: 25000, label: "TIER 3 : FOUNDING", perks: ["All Tier 2 Perks", "Quarterly Group Briefings", "Preview Token Mechanics", "Private Discussion Channels"] }
+    ];
+
+    s.oninput = function() {
+        let val = parseInt(this.value);
+        a.innerText = "$" + val.toLocaleString();
+        const cur = [...tiers].reverse().find(x => val >= x.min);
+        t.innerText = cur.label;
+        p.innerHTML = cur.perks.map(i => `<li>✓ ${i}</li>`).join('');
+    };
+    s.oninput();
+</script>
