@@ -3,38 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZIC // SOVEREIGN HUB</title>
+    <title>AZIC // OPERATION GENESIS</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="os-header">
-        <div class="logo-group" onclick="nav('home')">
-            <span class="logo">AZIC</span>
-        </div>
+        <div class="logo" onclick="nav('home')">AZIC</div>
         
-        <div class="search-container">
-            <input type="text" id="siteSearch" class="search-bar" placeholder="SEARCH SYSTEM..." onkeyup="searchSystem()">
-        </div>
-
-        <nav class="os-nav">
-            <button onclick="nav('home')">HOME</button>
-            <button onclick="nav('depot')">DEPOT</button>
-            <div class="dropdown">
-                <button class="dropbtn">OPERATIONS ▾</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="nav('mission')">MISSION BRIEF</a>
-                    <a href="#" onclick="nav('manifest')">MANIFEST</a>
-                    <a href="#" onclick="nav('believers')">BELIEVERS ROUND</a>
-                    <a href="#" onclick="nav('console')">CONSOLE</a>
-                </div>
+        <div style="display:flex; align-items:center; gap:20px;">
+            <div class="search-wrapper">
+                <input type="text" id="stealthSearch" class="search-input" placeholder="SEARCH SYSTEM..." onkeyup="searchSystem()">
+                <div class="search-trigger" onclick="toggleSearch()">🔍</div>
             </div>
-            <button onclick="nav('comms')">COMMS</button>
-        </nav>
+
+            <nav class="os-nav">
+                <button onclick="nav('home')">HOME</button>
+                <button onclick="nav('mission')">MISSION BRIEF</button>
+                <button onclick="nav('manifest')">MANIFEST</button>
+                <button onclick="nav('depot')">DEPOT</button>
+                <button onclick="nav('believers')" style="color:var(--az-med)">BELIEVERS ROUND</button>
+            </nav>
+
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
     </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button onclick="nav('home'); toggleMobileMenu()">HOME</button>
+        <button onclick="nav('mission'); toggleMobileMenu()">MISSION BRIEF</button>
+        <button onclick="nav('manifest'); toggleMobileMenu()">MANIFEST</button>
+        <button onclick="nav('depot'); toggleMobileMenu()">DEPOT</button>
+        <button onclick="nav('believers'); toggleMobileMenu()">BELIEVERS ROUND</button>
+    </div>
 
     <main id="viewport"></main>
 
+    <script>
+        function toggleSearch() { document.getElementById('stealthSearch').classList.toggle('active'); }
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>
