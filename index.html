@@ -8,12 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="marquee-container">
-        <div class="marquee-content">
-            THE CREATIVE RESISTANCE STARTS HERE // THE CREATIVE RESISTANCE STARTS HERE // THE CREATIVE RESISTANCE STARTS HERE // THE CREATIVE RESISTANCE STARTS HERE // 
-        </div>
-    </div>
-
     <header class="os-header">
         <div class="logo" onclick="nav('home')" style="font-family:var(--font-primary); font-weight:700; cursor:pointer;">AZIC</div>
         
@@ -38,6 +32,7 @@
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="toggleMobileMenu()">✕</div>
         <button onclick="nav('home'); toggleMobileMenu()">HOME</button>
         <button onclick="nav('mission'); toggleMobileMenu()">MISSION BRIEF</button>
         <button onclick="nav('manifest'); toggleMobileMenu()">MANIFEST</button>
@@ -50,6 +45,10 @@
     <script>
         function toggleSearch() { document.getElementById('stealthSearch').classList.toggle('active'); }
         function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+        // Close menu if clicking outside links
+        document.getElementById('mobileMenu').addEventListener('click', function(e) {
+            if (e.target.id === 'mobileMenu') toggleMobileMenu();
+        });
     </script>
     <script src="scripts.js"></script>
 </body>
