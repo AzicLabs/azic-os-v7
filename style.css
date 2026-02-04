@@ -1,4 +1,4 @@
-/* AZIC // LUMEN ENGINE v8.4 (DESIGN STANDARDS RESTORED) */
+/* AZIC // LUMEN ENGINE v8.5 (DESIGN STANDARDS & PILL-SHAPE) */
 :root {
     --bg-color-terminal: #05020a;
     --primary-purple: #8C52FF;
@@ -19,24 +19,6 @@ body {
     margin: 0; width: 100%; min-height: 100vh; overflow-x: hidden;
 }
 
-/* MARQUEE RESTORATION */
-.marquee-container {
-    background: var(--primary-purple);
-    color: #000;
-    padding: 10px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-.marquee-content {
-    display: inline-block;
-    animation: scroll 20s linear infinite;
-}
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
 /* HEADER & STEALTH SEARCH */
 .os-header {
     background: rgba(0,0,0,0.85); backdrop-filter: blur(15px);
@@ -47,19 +29,22 @@ body {
 
 .search-input {
     width: 0; opacity: 0; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color-faint);
-    color: #fff; padding: 8px 0; border-radius: 4px; transition: 0.4s;
+    color: #fff; padding: 8px 0; border-radius: 50px; transition: 0.4s;
     outline: none; font-family: var(--font-mono); position: absolute; right: 40px;
 }
 .search-input.active { width: 200px; opacity: 1; padding: 8px 15px; }
 
-/* NAV LOGIC */
-.os-nav button { 
-    background: transparent; border: none; color: #fff; 
-    font-family: var(--font-mono); font-size: 12px; cursor: pointer; padding: 10px 15px; 
+/* UNIFORM PILL BUTTONS */
+button, .cta-btn {
+    border-radius: 50px !important;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
+/* MOBILE MENU & CLOSE BUTTON */
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
-.hamburger span { width: 24px; height: 1px; background: #fff; transition: 0.3s; }
+.hamburger span { width: 24px; height: 1px; background: #fff; }
 
 .mobile-menu {
     position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
@@ -67,25 +52,27 @@ body {
     justify-content: center; align-items: center; gap: 25px; transition: 0.5s; z-index: 2500;
 }
 .mobile-menu.active { right: 0; }
-.mobile-menu button { background: transparent; border: none; color: #fff; font-size: 2rem; font-family: var(--font-primary); font-weight: 700; }
+.close-btn { position: absolute; top: 30px; right: 30px; font-size: 30px; cursor: pointer; color: var(--primary-purple); }
 
 @media (max-width: 900px) { .os-nav { display: none; } .hamburger { display: flex; } }
 
-/* DEPOT 1x3 GRID LOCK */
-.depot-grid {
+/* FORCED 3-COLUMN GRID FOR MEMBERSHIPS */
+.membership-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    width: 100%;
 }
+
 @media (max-width: 768px) {
-    .depot-grid { gap: 10px; }
-    .depot-card { padding: 15px !important; }
-    .depot-card h2 { font-size: 0.9rem !important; }
-    .depot-card p { font-size: 0.7rem !important; }
+    .membership-grid { gap: 8px; }
+    .membership-grid .asset-card { padding: 15px 10px !important; border-radius: 12px; }
+    .membership-grid h2 { font-size: 0.8rem !important; }
+    .membership-grid .price { font-size: 1.1rem !important; }
+    .membership-grid p { display: none; } /* Hide description on tiny mobile to keep 3-col clean */
+    .membership-grid button { padding: 8px 5px !important; font-size: 0.6rem !important; }
 }
 
 .asset-card {
     background: var(--container-bg); border: 1px solid var(--border-color-faint);
-    border-radius: 12px; padding: 40px; margin-bottom: 24px;
+    border-radius: 15px; padding: 30px; margin-bottom: 24px;
 }
